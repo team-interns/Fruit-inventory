@@ -15,6 +15,11 @@
     <link rel="stylesheet" type="text/css" href="../../assets/extra-libs/multicheck/multicheck.css">
     <link href="../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
     <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -217,7 +222,7 @@
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-       f
+       
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
@@ -254,69 +259,40 @@
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-6">
                          <div class="card">
                             <div class="card-body">
                                 
                                 <div class="table-responsive"><br>
-                                    <h5 align="right">balance</h5>
-                                   <table align="right" border="2px" >
-                                              <thead>
-                                                <tr>
-                                                  <th>ID</th>
-                                                  <th>customer name</th>
-                                                    <th>bal</th>
-                                                </tr>
-                                              </thead>
-                                              <tfoot>
-                                                <tr>
-                                                  <td> </td>
-                                                  <td>total  </td>
-                                                   <td>15000</td> 
-                                                </tr>
-                                              </tfoot>
-                                              <tbody>
-                                                <tr>
-                                                  <td>1</td>
-                                                  <td>mjhjk</td>
-                                                    <td>5000</td>
-                                                </tr>
-                                                <tr>
-                                                  <td>5</td>
-                                                  <td>hkbjk</td>
-                                                    <td>10000</td>
-                                                </tr>
-                                              </tbody>
-                                    </table>
-                                    <h5 align="left">due</h5>
-                                   <table align="left" border="2px" >
-  <thead>
+                                    <h5 align="left">balance</h5>
+                                 
+                                    <table class="table">
+                                  <tr>
+      
+    <td rowspan="2">Suppliers</td>
+    <td>Balance</td>
+      <td><a href="Sbal.html">2550</a></td>
+  </tr>
+  <tr>
+    
+    <td>Due</td>
+      <td><a href="Sdue.html">2550</a></td>
+      
+  </tr>
+                                      <tr>
     <tr>
-      <th>ID</th>
-      <th>supplier name</th>
-        <th>bal</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td> </td>
-      <td>total  </td>
-       <td>15000</td> 
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>mjhjk</td>
-        <td>5000</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>hkbjk</td>
-        <td>10000</td>
-    </tr>
-  </tbody>
-</table>
+      
+    <td rowspan="2">Customers</td>
+    <td>Balance</td> 
+        <td><a href="Cbal.html">2550</a></td>
+  </tr>
+  <tr>
+    
+    <td>Due</td>
+      <td><a href="Cdue.html">2550</a></td>
+  </tr>
+                                  
+                            </table>
                                     
 
 
