@@ -39,7 +39,7 @@
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-         <header class="topbar" data-navbarbg="skin5">
+       <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
@@ -49,19 +49,15 @@
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b class="logo-icon p-l-10">
+                        <b class="logo-icon p-l-5">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" height="60" width="230"/>
+                            <img src="../../assets/images/fruit-logo.png" alt="homepage" class="light-logo"  height=70 width=230/>
                            
                         </b>
                         <!--End Logo icon -->
                          <!-- Logo text -->
-                        <span class="logo-text">
-                             <!-- dark Logo text -->
-                             <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" />
-                            
-                        </span>
+                        
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -77,7 +73,8 @@
                     <!-- ============================================================== -->
                     <!-- Toggle which is visible on mobile only -->
                     <!-- ============================================================== -->
-                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="ti-more"></i> </a>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
@@ -97,20 +94,18 @@
                              <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                
                                 <a class="dropdown-item" href="CreateUser.html">User</a>
+                                
                                 <a class="dropdown-item" href="CustomerForm.html">Customer</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="SupplierForm.html">Supplier</a>
+                                
+                                <a class="dropdown-item" href="SupplierForm2.html">Supplier</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                            <form class="app-search position-absolute">
-                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
-                            </form>
-                        </li>
+                        
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -119,8 +114,8 @@
                         <!-- ============================================================== -->
                         <!-- Comment -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
-                            <a href="AddPurchase.html"><div>
+                        <li class="nav-item dropdown" style="padding: 10px">
+                            <a href="newPurchase.html"><div>
                                                 <div class="bg-dark p-10 text-white text-center">
                                                    <i class="fa fa-cart-plus m-b-5 font-16"></i>
                                                 </div>
@@ -133,7 +128,7 @@
                         <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown" style="padding: 10px">
                             <a href="AddSale.html">
                              <div>
                                                 <div class="bg-dark p-10 text-white text-center">
@@ -157,11 +152,11 @@
                                 <a class="dropdown-item" href="Balance.html"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
                                 
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="Setting.html"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                <a class="dropdown-item" href="Rate.html"><i class="ti-settings m-r-5 m-l-5"></i> Rate Setting</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="login.html"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
                                 <div class="dropdown-divider"></div>
-                                <div class="p-l-30 p-10"><a href="Profile.html" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
+                                
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -189,42 +184,41 @@
                         
                         <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Purchase </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Purchase details </span></a></li>
+                                <li class="sidebar-item"><a href="newPurchase.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="purchasedetails.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Purchase details </span></a></li>
                             </ul>
                         </li>
-             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Supplier </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Supplier </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                               <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing supplier details </span></a></li>  
+                               <li class="sidebar-item"><a href="Supplierform2.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="SupplierDetails.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing supplier details </span></a></li>  
                                 
                             </ul>
                         </li>
                 
-          <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sale </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sale </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="Customerform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Customer.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Sale details </span></a></li>
+                                <li class="sidebar-item"><a href="ProductSalesForm.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Product Sale </span></a></li>
+                                <li class="sidebar-item"><a href="SalesTables.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Sale details </span></a></li>
                             </ul>
                         </li>
-             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Customer </span></a>
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Customer </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                               <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing customer details </span></a></li>  
+                               <li class="sidebar-item"><a href="CustomerForm.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="CustomerTables.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing customer details </span></a></li>  
                                 
                             </ul>
                         </li>              
                         
-        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stocks.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Stock details</span></a></li>                
-      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Transaction.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Transactions</span></a></li>                
-       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="login.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">log out</span></a></li>                  
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stocks.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Stock details</span></a></li>                
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Transaction.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Transactions</span></a></li>                
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="login.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">log out</span></a></li>                  
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
-        </aside>
-        <!-- ============================================================== -->
+        </aside>   <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
@@ -1284,11 +1278,11 @@
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
-        </div>
+       
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
-    </div>
+ 
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->

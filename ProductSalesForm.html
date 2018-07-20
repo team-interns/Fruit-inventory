@@ -9,17 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>Fruit Management</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/logo-icon.png">
+    <title>FruitInventry</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="../../assets/extra-libs/multicheck/multicheck.css">
-    <link href="../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/quill/dist/quill.snow.css">
     <link href="../../dist/css/style.min.css" rel="stylesheet">
-    <style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -28,8 +25,7 @@ table, th, td {
 <![endif]-->
 </head>
 
-<body>
-    <!-- ============================================================== -->
+<body>     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
     <div class="preloader">
@@ -45,7 +41,7 @@ table, th, td {
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-          <header class="topbar" data-navbarbg="skin5">
+        <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
@@ -224,13 +220,7 @@ table, th, td {
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-       
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+        
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
@@ -238,12 +228,12 @@ table, th, td {
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title"><b>BALANCE</b></h4>
+                        <h4 class="page-title">Tables</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
                                 </ol>
                             </nav>
                         </div>
@@ -256,54 +246,218 @@ table, th, td {
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
+    
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-md-6">
-                         <div class="card">
-                            <div class="card-body">
-                                
-                                <div class="table-responsive"><br>
-                                    <h5 align="left">balance</h5>
-                                 
-                                    <table class="table">
-                                  <tr>
-      
-    <td rowspan="2">Suppliers</td>
-    <td>Balance</td>
-      <td><a href="Sbal.html">2550</a></td>
-  </tr>
-  <tr>
-    
-    <td>Due</td>
-      <td><a href="Sdue.html">2550</a></td>
-      
-  </tr>
-                                      <tr>
-    <tr>
-      
-    <td rowspan="2">Customers</td>
-    <td>Balance</td> 
-        <td><a href="Cbal.html">2550</a></td>
-  </tr>
-  <tr>
-    
-    <td>Due</td>
-      <td><a href="Cdue.html">2550</a></td>
-  </tr>
-                                  
-                            </table>
+                    <div class="col-md-12">
+                        <div class="card">
+                            <form class="form-horizontal">
+                                <div class="card-body">
+                                    <h3 class="card-title">Sales</h3>
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Bill no</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id="fname" placeholder="----auto generated---">
+                                        </div>
                                     
-
-
+                                    
+                                        <label for="date" class="col-sm-3 text-right control-label col-form-label">Date</label>
+                                        <div class="col-sm-3">
+                                            <input type="date" class="form-control" id="date" placeholder="">
+                                        </div>
+                                    </div>
+                                     <h5>Customer Details</h5>
+                                    <div class="form-group row">
+                                         
+                              <label for="lname" class="col-sm-3 text-right control-label col-form-label">Customer name</label>
+                                        <div class="col-sm-3">
+                                   <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                            <option>Select</option>
+                                            <option value="AP" ></option>
+                                              
+											<option value="HI"> </option>
+                                            <option value="CA"> </option>
+											  <option value="NV"> </option>
+                                                <option value="OR"></option>
+                                                <option value="WA"></option>
+											<option value="AZ"></option>
+                                                <option value="CO"></option>
+                                                <option value="MS"></option>
+                                                <option value="ID"></option>
+                                                <option value="MT"></option>
+                                                <option value="NE"></option>
+                                                <option value="MN"></option>
+                                                <option value="ND"></option>
+                                                <option value="NM" selected></option>
+                                                
+                                                <option value="UT"></option>
+                                                <option value="WY"></option>
+                                                <option value="LA"></option>
+                                        
+                                                
+                                                <option value="AR"></option>
+                                                <option value="IL"></option>
+                                                <option value="IA"></option>
+                                                <option value="KS"></option>
+                                                <option value="KY"></option>
+                                                
+                                                
+                                                
+                                                <option value="MO"></option>
+                                                <option value="OK"></option>
+                                            
+                                                <option value="SD" selected></option>
+                                                <option value="TX"></option>
+                                                <option value="TN"></option>
+                                                <option value="WI"></option>
+                                           
+                                                <option value="CT"></option>
+                                                <option value="DE"></option>
+                                                <option value="FL"></option>
+                                                <option value="GA"></option>
+                                                
+                                                <option value="ME"></option>
+                                                <option value="MD"></option>
+                                                <option value="MA"></option>
+                                                <option value="MI"></option>
+                                                <option value="NH"></option>
+                                                <option value="PA"></option>
+                                                <option value="NJ"></option>
+                                                <option value="AL"></option>
+                                                <option value="OH"></option>
+                                                <option value="NC"></option>
+                                                <option value="IN"></option>
+											
+										</select>          
+                                            <input type="dropdown-list" class="form-control" id=" cname" placeholder="customer Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Due</label>
+                                        <div class="col-sm-3">
+                                            <input type="number" class="form-control" id="email1" placeholder="">
+                                        </div>
+                              <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Balance</label>
+                                        <div class="col-sm-3">
+                                            <input type="number" class="form-control" id="cono1" placeholder="">
+                                        </div>
+                                    </div>
+                                   
                                 </div>
-
+                              
+                                 <h5>Sales Details</h5>
+                                    <div class="form-group row">
+                                         
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Product list</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id=" cname" placeholder="">
+                                             <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                            <option>Select</option>
+                                            <option value="AP" >Apple</option>
+                                              
+											<option value="HI">Apricot </option>
+                                            <option value="CA">Avocado </option>
+											  <option value="NV">Banana </option>
+                                                <option value="OR">Bilberry</option>
+                                                <option value="WA">Blackberry</option>
+											<option value="AZ">Blackcurrant</option>
+                                                <option value="CO">Blueberry</option>
+                                                <option value="MS">Boysenberry</option>
+                                                <option value="ID">Cherry</option>
+                                                <option value="MT">Chico fruit</option>
+                                                <option value="NE">Coconut</option>
+                                                <option value="MN">Crab apples</option>
+                                                <option value="ND">Cucumber</option>
+                                                <option value="NM" selected>Dragonfruit</option>
+                                                
+                                                <option value="UT">Gooseberry</option>
+                                                <option value="WY">Grape</option>
+                                                <option value="LA">Goji berry</option>
+                                        
+                                                
+                                                <option value="AR">Grapefruit</option>
+                                                <option value="IL">Guava</option>
+                                                <option value="IA">Honeyberry</option>
+                                                <option value="KS">Huckleberry</option>
+                                                <option value="KY">Jabuticaba</option>
+                                                
+                                                
+                                                
+                                                <option value="MO">Jack Fruit</option>
+                                                <option value="OK">Jambul</option>
+                                            
+                                                <option value="SD" selected>Lemon</option>
+                                                <option value="TX">Lime</option>
+                                                <option value="TN">Kumquat</option>
+                                                <option value="WI">Kiwifruit</option>
+                                           
+                                                <option value="CT">Lychee</option>
+                                                <option value="DE">Mango</option>
+                                                <option value="FL">Melon</option>
+                                                <option value="GA">Musk Melon</option>
+                                                
+                                                <option value="ME">Mulbery</option>
+                                                <option value="MD">Orange</option>
+                                                <option value="MA">Papaya</option>
+                                                <option value="MI">Peach</option>
+                                                <option value="NH">PineApple</option>
+                                                <option value="PA">Plum</option>
+                                                <option value="NJ">Pomegranate</option>
+                                                <option value="AL">Raisin</option>
+                                                <option value="OH">Raspberry</option>
+                                                <option value="NC">Strawberry</option>
+                                                <option value="IN">Water Melon</option>
+											
+										</select>
+                                        </div>
+                               </div>
+                                 <div class="form-group row">
+                                         
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Quantity</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id=" cname" placeholder="Quantity Here">
+                                        </div>
+                                    
+                                 </div>
+                               <div class="form-group row">
+                              <label for="lname" class="col-sm-3 text-right control-label col-form-label">Unit price</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id=" cname" placeholder="price here">
+                                        </div>
+                                    </div>
+                                 <div class="form-group row">
+                                         
+                                        <label for="lname" class="col-sm-3 text-right control-label col-form-label">Cost</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id=" cname" placeholder="cost Here">
+                                        </div>
+                                    
+                                 </div>
+                                <div class="border-top">
+                                <div class="card-body">
+                                    <h5 class="card-title"></h5>
+                                    <button type="button" class="btn btn-outline-primary">Add</button>
+                                    
+                                    <button type="button" class="btn btn-outline-success"><a href="transactionmode.html">Submit</a></button>
+                                    <button type="button" class="btn btn-outline-danger">Cancel</button>
+                                    
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                               
+</form> 
+                                 </div>
+                             
+                     </div>
+                 </div>
+                                
+                                
+                        
+                            
+            
+                       
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -322,7 +476,7 @@ table, th, td {
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -351,17 +505,61 @@ table, th, td {
     <script src="../../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../../dist/js/custom.min.js"></script>
-    <!-- this page js -->
-    <script src="../../assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
-    <script src="../../assets/extra-libs/multicheck/jquery.multicheck.js"></script>
-    <script src="../../assets/extra-libs/DataTables/datatables.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../../assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="../../dist/js/pages/mask/mask.init.js"></script>
+    <script src="../../assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="../../assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="../../assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="../../assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="../../assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="../../assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../assets/libs/quill/dist/quill.min.js"></script>
     <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('#zero_config').DataTable();
-    </script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
 
+        /*colorpicker*/
+        $('.demo').each(function() {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+    </script>
+     
 </body>
 
 </html>

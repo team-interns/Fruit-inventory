@@ -9,17 +9,14 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>Fruit Management</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/logo-icon.png">
+    <title>FruitInventory</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="../../assets/extra-libs/multicheck/multicheck.css">
-    <link href="../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/quill/dist/quill.snow.css">
     <link href="../../dist/css/style.min.css" rel="stylesheet">
-    <style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -32,7 +29,7 @@ table, th, td {
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
-    <div class="preloader">
+   <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
@@ -44,8 +41,7 @@ table, th, td {
     <div id="main-wrapper">
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-          <header class="topbar" data-navbarbg="skin5">
+        <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
@@ -224,13 +220,6 @@ table, th, td {
             </div>
             <!-- End Sidebar scroll-->
         </aside>
-       
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
         <div class="page-wrapper">
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
@@ -238,12 +227,13 @@ table, th, td {
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title"><b>BALANCE</b></h4>
+                        <h4 class="page-title">Transaction mode</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    
+                                     
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
                                 </ol>
                             </nav>
                         </div>
@@ -261,83 +251,66 @@ table, th, td {
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                    <div class="col-md-6">
-                         <div class="card">
-                            <div class="card-body">
-                                
-                                <div class="table-responsive"><br>
-                                    <h5 align="left">balance</h5>
-                                 
-                                    <table class="table">
-                                  <tr>
-      
-    <td rowspan="2">Suppliers</td>
-    <td>Balance</td>
-      <td><a href="Sbal.html">2550</a></td>
-  </tr>
-  <tr>
-    
-    <td>Due</td>
-      <td><a href="Sdue.html">2550</a></td>
-      
-  </tr>
-                                      <tr>
-    <tr>
-      
-    <td rowspan="2">Customers</td>
-    <td>Balance</td> 
-        <td><a href="Cbal.html">2550</a></td>
-  </tr>
-  <tr>
-    
-    <td>Due</td>
-      <td><a href="Cdue.html">2550</a></td>
-  </tr>
-                                  
-                            </table>
-                                    
-
-
+                    <div class="col-md-12">
+                        <div class="card">
+                            
+                                <div class="card-body">
+                                 <h5 class="card-title">Select</h5>
+                                <div class="bd-example">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cash</button>
+                                        <div class="dropdown-menu">
+                                            <label>Amount Paid:</label><input type="number" value="number">
+                                            <label>Amount Receivable:</label><input type="number" value="number">
+                                            <label>Balance:</label><input type="number" value="number">
+                                          
+                                        </div>
+                                    </div><!-- /btn-group -->
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cheque</button>
+                                        <div class="dropdown-menu">
+                                            <label>Cheque no:</label><input type="number" value="number">
+                                            <label>Date:</label><input type="Date" value="Date">
+                                            <label>Bank Name:</label><input type="text" value="Bank Name">
+                                    </div><!-- /btn-group -->
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Other mode</button>
+                                        <div class="dropdown-menu">
+                                            <label>Transaction ID:</label><input type="text" value="">
+                                            <label>Paid Through:</label>
+                                            
+                                            <ul><input type="radio" name="paytm">Paytm<br/>
+                                                <input type="radio" name="paytm">Tez<br/>
+                                                <input type="radio" name="paytm">Phone Pay<br/>
+                                                <input type="radio" name="paytm">Other
+                                            </ul>
+                                            <label>Balance:</label><input type="number" value="number">
+                                          
+                                          
+                                        </div>
+                                    </div><!-- /btn-group -->
+                                    </div>
+                                   
                                 </div>
-
-                            </div>
                         </div>
+                        </div>
+                          
+                                    <div class="card-body">
+                                    <div class="text-right">
+                                         <button type="button" class="btn btn-primary ">Submit</button>
+                                        <button type="submit" class="btn btn-danger">Cancel</button>
+                                    </div>
                     </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-            </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
-            <footer class="footer text-center">
-                
-            </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
-    </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
+                </div>                
+                                 
+                        </div>
+                                    
+                                        </div>
+                                         
+                                    </div>
+                                     
+                    
     <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
@@ -351,17 +324,61 @@ table, th, td {
     <script src="../../dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="../../dist/js/custom.min.js"></script>
-    <!-- this page js -->
-    <script src="../../assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
-    <script src="../../assets/extra-libs/multicheck/jquery.multicheck.js"></script>
-    <script src="../../assets/extra-libs/DataTables/datatables.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../../assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="../../dist/js/pages/mask/mask.init.js"></script>
+    <script src="../../assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="../../assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="../../assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="../../assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="../../assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="../../assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../assets/libs/quill/dist/quill.min.js"></script>
     <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('#zero_config').DataTable();
-    </script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
 
+        /*colorpicker*/
+        $('.demo').each(function() {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+    </script>
+               
 </body>
 
 </html>
