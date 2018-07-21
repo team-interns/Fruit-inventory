@@ -18,6 +18,7 @@
     <link href="../../assets/libs/jquery-steps/jquery.steps.css" rel="stylesheet">
     <link href="../../assets/libs/jquery-steps/steps.css" rel="stylesheet">
     <link href="../../dist/css/style.min.css" rel="stylesheet">
+    <link href="../../dist/css/our.css" rel="stylesheet">
     
      <link rel="stylesheet" type="text/css" href="../../assets/libs/select2/dist/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/libs/jquery-minicolors/jquery.minicolors.css">
@@ -403,22 +404,27 @@
                                 <h3>Product</h3>
                                 <section>
                                     <label>PURCHASE TABLE</label>
-                                <div class="form-group row card">
+                                <div class="row card">
+                                    <div class="col-md-12">
+                                    <div class="card">
+                                    <div class="card-body">
+                                      <div class="table-responsive">
                                  
-                                        <table border="1" class="table">
-                                                <thead>
+                                       
+                                    <table class="table table-striped table-bordered dataTable" role="grid">
+                                       <thead class="tableBackground">
                                                 <th>Sl.no</th>
-                                                <th>ProductId</th>
+                                                <th>Product ID</th>
                                                 <th>Product Name</th>
                                                 <th>Quantity</th>
                                                 <th>Unit</th>
                                                 <th>Rate</th>
-                                                <th>amount</th>
+                                                <th>Amount</th>
                                                 </thead>
-                                                <tbody>
+                                       <tbody>
                                                 <tr>
                                                     <td>1</td>
-                                                    <td>-auto genetated-</td>
+                                                    <td>-Auto genetated-</td>
                                                     <td><select class="select2 form-control custom-select" style="width: 100%; height:36px;">
                                             <option>Select</option>
                                             <option value="AP" >Apple</option>
@@ -478,33 +484,42 @@
 											
                                                         </select></td>
                                                     <td><input type="text" name="quantity"></td>
-                                                    <td><input type="number" name="amount"></td>
+                                                    
                                                     <td><select>
-                                                        <option>select</option>
+                                                        <option>Select</option>
                                                         <option>kilogram</option>
                                                         <option>Krates</option>
                                                         <option>Pieces</option>
                                                         <option>Dozons</option>
 											
                                                         </select></td>
+                                                    <td><input type="number" name="amount"></td>
                                                     <td><input type="text" name="rate"></td>
 			
                                                     </tr>
                                                 </tbody>
-                                               </table>
+                                       
+                                    </table>
+                                </div>
                                     <div>
-                                            <input type="button" class="btn btn-outline-secondary" name="ADD PRODUCT" value="ADD PRODUCT">
+                                    <button type="button" class="btn btn-outline-info projectButton">Add Product</button>
+                                        </div>
+                                            
+                                  </div>  
+                                        </div>
+                                        </div>
                                     </div>
-                                    </div>
-                                    <div class="row">
+                <div class="row">
+                   
                     <div class="col-md-6">
+                         <label>EXPENSES</label>
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title m-b-0" >Expenses</h5>
-                            </div>
+                                
+                            
                                 <div class="table-responsive">
-                                    <table border="1" class="table" >
-                                        <thead class="thead-light">
+                                    <table class="table table table-striped table-bordered dataTable" role="grid" >
+                                        <thead class="tableBackground">
                                             <tr>
                                                 <th>
                                                     <label class="container customcheckbox m-b-20">
@@ -512,9 +527,9 @@
                                                         <span class="checkmark"></span>
                                                     </label>
                                                 </th>
-                                                <th scope="col">SL.NO</th>
-                                                <th scope="col">EXPENCES</th>
-												<th scope="col">AMOUNT</th>
+                                                <th scope="col">Sl.No</th>
+                                                <th scope="col">Expenses</th>
+												<th scope="col">Amount</th>
                                             </tr>
                                         </thead>
                                         <tbody class="customtable">
@@ -599,6 +614,7 @@
                                         </tbody>
                                     </table>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 <div class="col-md-6">
@@ -613,6 +629,7 @@
                     </div>
                 </div>
             </div>
+                                    
     
                                 </section>
 	
@@ -631,6 +648,21 @@
                                 </div>
                                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                                   <div class="card-body">
+                                      
+                                      <div class="row mb-3 align-items-center">
+                                    <div class="col-lg-4 col-md-12 text-right">
+                                        <span>Amount Payable</span>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" aria-label="Recipient 's username" aria-describedby="basic-addon2">
+                                           <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">₹</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                      
                                     <div class="row mb-3 align-items-center">
                                     <div class="col-lg-4 col-md-12 text-right">
                                         <span>Amount Paid</span>
@@ -716,6 +748,21 @@
                                 </div>
                                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
                                   <div class="card-body">
+                                      
+                                      <div class="row mb-3 align-items-center">
+                                    <div class="col-lg-4 col-md-12 text-right">
+                                        <span>Amount Payable</span>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" aria-label="Recipient 's username" aria-describedby="basic-addon2">
+                                           <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">₹</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                      
                                      <div class="row mb-3 align-items-center">
                                     <div class="col-lg-4 col-md-12 text-right">
                                         <span>Amount Paid</span>
