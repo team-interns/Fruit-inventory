@@ -13,7 +13,7 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="../../assets/libs/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="../../assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="textqaa/css" href="../../assets/libs/jquery-minicolors/jquery.minicolors.css">
     <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="../../assets/libs/quill/dist/quill.snow.css">
     <link href="../../dist/css/style.min.css" rel="stylesheet">
@@ -25,6 +25,57 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    
+    
+    <script>
+var stateObject = {
+"India": { 
+"Andra Pradesh": ["East Godavari", "West Godavari", "Krishna", "Guntur", "Prakasam", "Sri Potti Sri Ramulu Nellore", "Srikakulam", "Vizianagaram","Visakhapatnam"],
+"Arunachal Pradesh":["Papumpare","Changlang","Lohit","West Siang","Tirap","East Siang","Kurung Kumey","West Kameng","Upper Subansiri","Lower Subansiri","East Kameng","Lower Dibang Valley","Tawang","Upper Siang","Anjaw","Dibang Valley"],
+"Assam":[],
+"Bihar":[],
+"Chhattisgarh":["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Gariaband","Janjgir-Champa","Jashpur","Kabirdham","Kanker","Kondagaon","Korba","Koriya","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur","Surguja"],
+"Goa":["North Goa", "South Goa"],
+"Gujarat":["Ahmedabad","Amreli","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Botad","Chhota Udaipur","Dahod","Dang","Devbhoomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kutch","Kheda","Mahisagar","Mehsana","Morbi","Narmada","Navsari","Panchmahal","Patan","Porbandar","Rajkot","Sabarkantha","Surat","Surendranagar","Tapi","Vadodara","Valsad"],
+"Haryana":["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurgaon","Hisar","Jhajjar","Jind","Kaithal","Kurukshetra","Karnal","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"],
+"Himachal Pradesh":[],
+"Jammu and Kashmir":[],
+"Jharkhand":["Garhwa","Palamu","Latehar","Chatra","Hazaribagh","Koderma","Giridih","Ramgarh","Bokaro","Dhanbad","Lohardaga","Gumla","Simdega","Ranchi","Khunti","West Singhbhum","Saraikela Kharsawan","East Singhbhum","Jamtara","Deoghar","Dumka","Pakur","Godda","Sahebganj"],
+"Karnataka":["Bagalkot","Bengaluru Urban","Bengaluru Rural","Belagavi","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Kalaburagi","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysuru","Raichur","Ramanagara","Shivamogga","Tumakuru","Udupi","Uttara Kannada","Yadgir"],
+"Kerala":["Thiruvananthapuram", "Palakkad"],
+"Madya Pradesh":[],
+"Maharashtra":["Akola","Amravati","Buldana","Yavatmal","Washim","Aurangabad","Beed","Jalna","Osmanabad","Latur","Nanded","Hingoli","Mumbai","Mumbai Suburban District","Thane","Raigad","Ratnagiri","Sindhudurg","Bhandara","Chandrapur","Gadchiroli","Gondia","Nagpur","Wardha","Ahmednagar","Ahmednagar","Dhule","Jalgaon","Nandurbar","Nashik","Kolhapur","Pune","Sangli","Satara","Solapur"],
+"Manipur":["Bishnupur","Chandel","Churachandpur","Imphal-East","Imphal-West","Senapati","Tamenglong","Thoubal","Ukhrul","Kangpokpi","Tengnoupal","Pherzawl","Noney","Kamjong","Jiribam","Kakching"],
+
+},
+}
+window.onload = function () {
+var countySel = document.getElementById("countySel"),
+stateSel = document.getElementById("stateSel"),
+districtSel = document.getElementById("districtSel");
+for (var country in stateObject) {
+countySel.options[countySel.options.length] = new Option(country, country);
+}
+countySel.onchange = function () {
+stateSel.length = 1; // remove all options bar first
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+for (var state in stateObject[this.value]) {
+stateSel.options[stateSel.options.length] = new Option(state, state);
+}
+}
+countySel.onchange(); // reset in case page is reloaded
+stateSel.onchange = function () {
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+var district = stateObject[countySel.value][this.value];
+for (var i = 0; i < district.length; i++) {
+districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+}
+}
+}
+</script>
+    
 </head>
 
 <body>
@@ -57,7 +108,7 @@
                         <b class="logo-icon p-l-10">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" />
+                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" height="60" width="230"/>
                            
                         </b>
                         <!--End Logo icon -->
@@ -111,11 +162,11 @@
                         <!-- ============================================================== -->
                         <!-- Search -->
                         <!-- ============================================================== -->
-                        <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                       <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
                             <form class="app-search position-absolute">
                                 <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
                             </form>
-                        </li>
+                        </li>-->
                     </ul>
                     <!-- ============================================================== -->
                     <!-- Right side toggle and nav items -->
@@ -247,7 +298,7 @@
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                    
                                 </ol>
                             </nav>
                         </div>
@@ -270,6 +321,13 @@
                             <form class="form-horizontal">
                                 <div class="card-body">
                                     <h4 class="card-title">Supplier Info</h4>
+                                     <div class="form-group row">
+                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">Supplier ID
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="tel" class="form-control phone-inputmask" id="phone-mask" placeholder="Auto Generated">
+                                        </div>
+                                    </div>
                                     <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Name</label>
                                         <div class="col-sm-9">
@@ -289,13 +347,7 @@
                                             <input type="email" class="form-control" id="email" placeholder="Valid email here">
                                         </div>
                                     </div>
-                                     <div class="form-group row">
-                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">Supplier ID
-                                        </label>
-                                        <div class="col-sm-9">
-                                            <input type="tel" class="form-control phone-inputmask" id="phone-mask" placeholder="Auto Generated">
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group row">
                                     <label class="col-md-3 m-t-15">Select Fruits</label>
                                     <div class="col-md-9">
@@ -370,8 +422,8 @@
                         </div>
                        <div class="card">
                             <div class="card-body">
-                                 <h4 class="card-title">Past Payment Details</h4>
-                                <div class="row mb-3 align-items-center">
+                                 <h4 class="card-title">Account Details</h4>
+                                <!--<div class="row mb-3 align-items-center">
                                     <div class="col-lg-4 col-md-12 text-right">
                                         <span>Advance</span>
                                     </div>
@@ -383,8 +435,14 @@
                                             </div>
                                         </div>
                                     </div>
+                                </div>-->
+                                 <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Bank Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="fname" placeholder="Name Here">
+                                        </div>
                                 </div>
-                                <div class="row mb-3 align-items-center">
+                               <!-- <div class="row mb-3 align-items-center">
                                     <div class="col-lg-4 col-md-12 text-right">
                                         <span>Commission</span>
                                     </div>
@@ -396,33 +454,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                               <div class="row mb-3 align-items-center">
-                                    <div class="col-lg-4 col-md-12 text-right">
-                                        <span>Due Amount</span>
-                                    </div>
-                                    <div class="col-lg-8 col-md-12">
-                                        <div class="input-group">
-                                            <input type="number" class="form-control" aria-label="Recipient 's username" aria-describedby="basic-addon2">
-                                           <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">₹</span>
-                                            </div>
+                                </div>-->
+                                
+                                <div class="form-group row">
+                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">Account Number
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="phone-mask" placeholder="Enter Account Number">
                                         </div>
                                     </div>
-                                </div>
-                                 <div class="row mb-3 align-items-center">
-                                    <div class="col-lg-4 col-md-12 text-right">
-                                        <span>Balance Amount</span>
-                                    </div>
-                                    <div class="col-lg-8 col-md-12">
-                                        <div class="input-group">
-                                            <input type="number" class="form-control" aria-label="Recipient 's username" aria-describedby="basic-addon2">
-                                           <div class="input-group-append">
-                                                <span class="input-group-text" id="basic-addon2">₹</span>
-                                            </div>
+                                
+                                <div class="form-group row">
+                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">IFSC Number
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="phone-mask" placeholder="Enter IFSC Number">
                                         </div>
                                     </div>
-                                </div>
+                               
+                                 
+                                
 
                             </div>
                         </div>
@@ -444,66 +495,30 @@
                         <div class="card">
                             <div class="card-body">
                                  <h4 class="card-title">Address</h4>
+                                
+                                <div class="form-group m-t-20">
+                                    <label>Country</label>
+                                    <select name="state" id="countySel" size="1" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <option value="" selected="selected">Select Country</option>
+                                    </select>
+                                </div>
+                                <div class="form-group m-t-20">
+                                    <label>State</label>
+                                    <select name="countrya" id="stateSel" size="1" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <option value="" selected="selected">Please select Country first</option>
+                                    </select>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 m-t-15">District</label>
+                                   <select name="district" id="districtSel" size="1" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                       <option value="" selected="selected">Please select State first</option>
+                                    </select>
+                                </div>
                                 <div class="form-group m-t-20">
                                     <label>Location</label>
                                     <input type="text" class="form-control" id="location" placeholder="Enter Current Location">
                                 </div>
-                                <div class="form-group m-t-20">
-                                    <label>Town</label>
-                                    <input type="text" class="form-control" id="location" placeholder="Enter Current Town">
-                                </div>
-                                <div class="form-group m-t-20">
-                                    <label>District</label>
-                                    <input type="text" class="form-control" id="location" placeholder="Enter Current District">
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-md-3 m-t-15">State</label>
-                                    <div class="col-md-9">
-                                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
-                                            <option>Select</option>
-                                            
-                                                <option value="AK">Andhra Pradesh</option>
-                                                <option value="HI">Arunachal Pradesh</option>
-                                            
-                                            
-                                                <option value="CA">Assam</option>
-                                                <option value="NV">Bihar</option>
-                                                <option value="OR">Goa</option>
-                                                <option value="WA">Gujarat</option>
-                                          
-                                            
-                                                <option value="AZ">Haryana</option>
-                                                <option value="CO">Himachal Pradesh</option>
-                                                <option value="ID">Jammu & Kashmir</option>
-                                                <option value="MT">Karnataka</option>
-                                                <option value="NE">Kerala</option>
-                                                <option value="NM">Madhya Pradesh</option>
-                                                <option value="ND">Maharashtra </option>
-                                                <option value="UT">Manipur</option>
-                                                <option value="WY">Meghalaya</option>
-                                           
-                                           
-                                                <option value="AL">Mizoram</option>
-                                                <option value="AR">Nagaland</option>
-                                                <option value="IL">Orissa</option>
-                                                <option value="IA">Punjab</option>
-                                                <option value="KS">Rajasthan</option>
-                                                <option value="KY">Sikkim</option>
-                                                <option value="LA">Tamil Nadu</option>
-                                                <option value="MN">Tripura</option>
-                                                <option value="MS">Uttar Pradesh </option>
-                                                <option value="MO">West Bengal</option>
-                                                <option value="OK">Chhattisgarh</option>
-                                                <option value="SD"> Uttarakhand</option>
-                                                <option value="TX">Jharkhand</option>
-                                                <option value="TN">Telangana</option>  
-                                        </select>
-                                    </div>
-                                </div>
-                               <div class="form-group m-t-20">
-                                    <label>Country</label>
-                                    <input type="text" class="form-control" id="location" value="India">
-                                </div>
+                               
                                 <div class="form-group">
                                     <label>Pin Code <small class="text-muted">999-999</small></label>
                                     <input type="tel" class="form-control" id="phone-mask" placeholder="Enter 6 digit Pin Code" maxlength="6">
