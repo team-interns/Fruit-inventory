@@ -245,10 +245,10 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <!--div class="page-breadcrumb">
+            <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Purchase Details</h4>
+                        <h4 class="page-title">Supplier Payable Details</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                
@@ -256,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-            </div-->
+            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -342,7 +342,9 @@
                                                               Supplier Name
                                                               <input type="text" name="supplierName" />
                                                               Due Amount
-                                                              <input type="text" name="due" /><br/>
+                                                              <input type="text" name="due" />
+                                                              
+                                                              <br/>
                                                               <br/>
                                                               Date<i class="fa fa-calendar-check-o">:</i><input type="date"/>
                                                               <br/>
@@ -385,9 +387,11 @@
                                                             
                                                               </div>
                                                               <div class="modal-body">
-                                                                  <p>Do you want to delete?</p>
+                                                                  <p>Do you want to edit?</p>
                                                               </div>
                                                               <div class="modal-footer">
+                                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                                                                   
                                                               </div>
                                                         </div>

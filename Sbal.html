@@ -245,10 +245,10 @@
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <!--div class="page-breadcrumb">
+            <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Purchase Details</h4>
+                        <h4 class="page-title">Supplier Receivable Details</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
                                
@@ -256,7 +256,7 @@
                         </div>
                     </div>
                 </div>
-            </div-->
+            </div>
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
@@ -339,10 +339,12 @@
                                                               </div>
                                                               
                                                           <div class="modal-body container">
-                                                              Supplier Name
+                                                              <label>Supplier Name</label>
                                                               <input type="text" name="supplierName" />
-                                                              Balance Amount
-                                                              <input type="text" name="due" /><br/>
+                                                              <label>Bal Amount</label>
+                                                              <input type="text" name="due" />
+                                                              
+                                                              <br/>
                                                               <br/>
                                                               Date<i class="fa fa-calendar-check-o">:</i><input type="date"/>
                                                               <br/>
@@ -388,6 +390,8 @@
                                                                   <p>Do you want to edit?</p>
                                                               </div>
                                                               <div class="modal-footer">
+                                                                   <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
                                                                   
                                                               </div>
                                                         </div>
