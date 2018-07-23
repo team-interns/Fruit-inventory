@@ -1,3 +1,25 @@
+.tableBackground{
+    background-color:darkgrey;
+    color: floralwhite;
+}
+.iconPadding{
+    padding-top: 10px;
+    padding-right: 10px;
+}
+.modelTable{
+    background-color:darkgray; 
+    color: cornsilk
+}
+.projectButton{
+    border-radius: 50%;
+}
+.editButton{
+    border-radius: 50%; 
+    border: 5px;
+}
+.selectUnit{
+     width: 100%; height:36px;
+}
 .table, .th, .td {
     border: 1px solid black;
 }
