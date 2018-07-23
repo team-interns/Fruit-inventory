@@ -1,0 +1,642 @@
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
+    <title>Supplier Form</title>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" type="textqaa/css" href="../../assets/libs/jquery-minicolors/jquery.minicolors.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/libs/quill/dist/quill.snow.css">
+    <link href="../../dist/css/style.min.css" rel="stylesheet">
+    
+    
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+    
+    
+    <script>
+var stateObject = {
+"India": { 
+"Andra Pradesh": ["East Godavari", "West Godavari", "Krishna", "Guntur", "Prakasam", "Sri Potti Sri Ramulu Nellore", "Srikakulam", "Vizianagaram","Visakhapatnam"],
+"Arunachal Pradesh":["Papumpare","Changlang","Lohit","West Siang","Tirap","East Siang","Kurung Kumey","West Kameng","Upper Subansiri","Lower Subansiri","East Kameng","Lower Dibang Valley","Tawang","Upper Siang","Anjaw","Dibang Valley"],
+"Assam":[],
+"Bihar":[],
+"Chhattisgarh":["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada","Dhamtari","Durg","Gariaband","Janjgir-Champa","Jashpur","Kabirdham","Kanker","Kondagaon","Korba","Koriya","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur","Surguja"],
+"Goa":["North Goa", "South Goa"],
+"Gujarat":["Ahmedabad","Amreli","Anand","Aravalli","Banaskantha","Bharuch","Bhavnagar","Botad","Chhota Udaipur","Dahod","Dang","Devbhoomi Dwarka","Gandhinagar","Gir Somnath","Jamnagar","Junagadh","Kutch","Kheda","Mahisagar","Mehsana","Morbi","Narmada","Navsari","Panchmahal","Patan","Porbandar","Rajkot","Sabarkantha","Surat","Surendranagar","Tapi","Vadodara","Valsad"],
+"Haryana":["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurgaon","Hisar","Jhajjar","Jind","Kaithal","Kurukshetra","Karnal","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"],
+"Himachal Pradesh":[],
+"Jammu and Kashmir":[],
+"Jharkhand":["Garhwa","Palamu","Latehar","Chatra","Hazaribagh","Koderma","Giridih","Ramgarh","Bokaro","Dhanbad","Lohardaga","Gumla","Simdega","Ranchi","Khunti","West Singhbhum","Saraikela Kharsawan","East Singhbhum","Jamtara","Deoghar","Dumka","Pakur","Godda","Sahebganj"],
+"Karnataka":["Bagalkot","Bengaluru Urban","Bengaluru Rural","Belagavi","Bellary","Bidar","Vijayapura","Chamarajanagar","Chikballapur","Chikkamagaluru","Chitradurga","Dakshina Kannada","Davanagere","Dharwad","Gadag","Kalaburagi","Hassan","Haveri","Kodagu","Kolar","Koppal","Mandya","Mysuru","Raichur","Ramanagara","Shivamogga","Tumakuru","Udupi","Uttara Kannada","Yadgir"],
+"Kerala":["Thiruvananthapuram", "Palakkad"],
+"Madya Pradesh":[],
+"Maharashtra":["Akola","Amravati","Buldana","Yavatmal","Washim","Aurangabad","Beed","Jalna","Osmanabad","Latur","Nanded","Hingoli","Mumbai","Mumbai Suburban District","Thane","Raigad","Ratnagiri","Sindhudurg","Bhandara","Chandrapur","Gadchiroli","Gondia","Nagpur","Wardha","Ahmednagar","Ahmednagar","Dhule","Jalgaon","Nandurbar","Nashik","Kolhapur","Pune","Sangli","Satara","Solapur"],
+"Manipur":["Bishnupur","Chandel","Churachandpur","Imphal-East","Imphal-West","Senapati","Tamenglong","Thoubal","Ukhrul","Kangpokpi","Tengnoupal","Pherzawl","Noney","Kamjong","Jiribam","Kakching"],
+
+},
+}
+window.onload = function () {
+var countySel = document.getElementById("countySel"),
+stateSel = document.getElementById("stateSel"),
+districtSel = document.getElementById("districtSel");
+for (var country in stateObject) {
+countySel.options[countySel.options.length] = new Option(country, country);
+}
+countySel.onchange = function () {
+stateSel.length = 1; // remove all options bar first
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+for (var state in stateObject[this.value]) {
+stateSel.options[stateSel.options.length] = new Option(state, state);
+}
+}
+countySel.onchange(); // reset in case page is reloaded
+stateSel.onchange = function () {
+districtSel.length = 1; // remove all options bar first
+if (this.selectedIndex < 1) return; // done 
+var district = stateObject[countySel.value][this.value];
+for (var i = 0; i < district.length; i++) {
+districtSel.options[districtSel.options.length] = new Option(district[i], district[i]);
+}
+}
+}
+</script>
+    
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+       <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="index.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" height="60" width="230"/>
+                           
+                        </b>
+                        <!--End Logo icon -->
+                         <!-- Logo text -->
+                        <span class="logo-text">
+                             <!-- dark Logo text -->
+                             <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" />
+                            
+                        </span>
+                        <!-- Logo icon -->
+                        <!-- <b class="logo-icon"> -->
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+                            <!-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
+                            
+                        <!-- </b> -->
+                        <!--End Logo icon -->
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- Toggle which is visible on mobile only -->
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                             <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
+                             <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="CreateUser.html">User</a>
+                                <a class="dropdown-item" href="CustomerForm.html">Customer</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="SupplierForm.html">Supplier</a>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                       <!-- <li class="nav-item search-box"> <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                            <form class="app-search position-absolute">
+                                <input type="text" class="form-control" placeholder="Search &amp; enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                            </form>
+                        </li>-->
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-right">
+                        <!-- ============================================================== -->
+                        <!-- Comment -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a href="AddPurchase.html"><div>
+                                                <div class="bg-dark p-10 text-white text-center">
+                                                   <i class="fa fa-cart-plus m-b-5 font-16"></i>
+                                                </div>
+                                            </div>
+                            </a> 
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Comment -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- Messages -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a href="AddSale.html">
+                             <div>
+                                                <div class="bg-dark p-10 text-white text-center">
+                                                   <i class="fa fa-tag m-b-5 font-16"></i>
+                                                   
+                                                   
+                                                </div>
+                                            </div></a>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- End Messages -->
+                        <!-- ============================================================== -->
+
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
+                            <div class="dropdown-menu dropdown-menu-right user-dd animated">
+                                <a class="dropdown-item" href="Profile.html"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                <a class="dropdown-item" href="Balance.html"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+                                
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="Setting.html"><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="login.html"><i class="fa fa-power-off m-r-5 m-l-5"></i> Logout</a>
+                                <div class="dropdown-divider"></div>
+                                <div class="p-l-30 p-10"><a href="Profile.html" class="btn btn-sm btn-success btn-rounded">View Profile</a></div>
+                            </div>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
+                                <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Purchase </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Purchase details </span></a></li>
+                            </ul>
+                        </li>
+             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Supplier </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                               <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing supplier details </span></a></li>  
+                                
+                            </ul>
+                        </li>
+                
+          <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sale </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="Customerform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="Customer.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Sale details </span></a></li>
+                            </ul>
+                        </li>
+             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Customer </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                               <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing customer details </span></a></li>  
+                                
+                            </ul>
+                        </li>              
+                        
+        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stocks.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Stock details</span></a></li>                
+      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Transaction.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Transactions</span></a></li>                
+       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="login.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">log out</span></a></li>                  
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">Supplier Form</h4>
+                        <div class="ml-auto text-right">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <form class="form-horizontal">
+                                <div class="card-body">
+                                    <h4 class="card-title">Supplier Info</h4>
+                                     <div class="form-group row">
+                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">Supplier ID
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="tel" class="form-control phone-inputmask" id="phone-mask" placeholder="Auto Generated">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="fname" placeholder="Name Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">Phone
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="tel" class="form-control phone-inputmask" id="phone-mask" placeholder="Enter Phone Number">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email" class="col-sm-3 text-right control-label col-form-label">Email ID</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="email" placeholder="Valid email here">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+                                    <label class="col-md-3 m-t-15">Select Fruits</label>
+                                    <div class="col-md-9">
+                                        <select class="select2 form-control m-t-15" multiple="multiple" style="height: 36px;width: 100%;">
+                                            
+                                                <option value="AP">Apple</option>
+                                                <option value="HI">Apricot</option>
+                                           
+                                                <option value="CA">Avocado</option>
+                                                <option value="NV">Banana</option>
+                                                <option value="OR">Bilberry</option>
+                                                <option value="WA">Blackberry</option>
+                                           
+                                           
+                                                <option value="AZ">Blackcurrant</option>
+                                                <option value="CO">Blueberry</option>
+                                                <option value="MS">Boysenberry</option>
+                                                <option value="ID">Cherry</option>
+                                                <option value="MT">Chico fruit</option>
+                                                <option value="NE">Coconut</option>
+                                                <option value="MN">Crab apples</option>
+                                                <option value="ND">Cucumber</option>
+                                                <option value="NM" selected>Dragonfruit</option>
+                                                
+                                                <option value="UT">Gooseberry</option>
+                                                <option value="WY">Grape</option>
+                                                <option value="LA">Goji berry</option>
+                                        
+                                                
+                                                <option value="AR">Grapefruit</option>
+                                                <option value="IL">Guava</option>
+                                                <option value="IA">Honeyberry</option>
+                                                <option value="KS">Huckleberry</option>
+                                                <option value="KY">Jabuticaba</option>
+                                                
+                                                
+                                                
+                                                <option value="MO">Jack Fruit</option>
+                                                <option value="OK">Jambul</option>
+                                            
+                                                <option value="SD" selected>Lemon</option>
+                                                <option value="TX">Lime</option>
+                                                <option value="TN">Kumquat</option>
+                                                <option value="WI">Kiwifruit</option>
+                                           
+                                                <option value="CT">Lychee</option>
+                                                <option value="DE">Mango</option>
+                                                <option value="FL">Melon</option>
+                                                <option value="GA">Musk Melon</option>
+                                                
+                                                <option value="ME">Mulbery</option>
+                                                <option value="MD">Orange</option>
+                                                <option value="MA">Papaya</option>
+                                                <option value="MI">Peach</option>
+                                                <option value="NH">PineApple</option>
+                                                <option value="PA">Plum</option>
+                                                <option value="NJ">Pomegranate</option>
+                                                <option value="AL">Raisin</option>
+                                                <option value="OH">Raspberry</option>
+                                                <option value="NC">Strawberry</option>
+                                                <option value="IN">Water Melon</option>
+                                               
+                                            
+                                          
+                                        </select>
+                                    </div>
+                                </div>
+                                   
+                                </div>
+                               
+                            </form>
+                        </div>
+                       <div class="card">
+                            <div class="card-body">
+                                 <h4 class="card-title">Account Details</h4>
+                                <!--<div class="row mb-3 align-items-center">
+                                    <div class="col-lg-4 col-md-12 text-right">
+                                        <span>Advance</span>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" aria-label="Recipient 's username" aria-describedby="basic-addon2">
+                                           <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">₹</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                 <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Bank Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="fname" placeholder="Name Here">
+                                        </div>
+                                </div>
+                               <!-- <div class="row mb-3 align-items-center">
+                                    <div class="col-lg-4 col-md-12 text-right">
+                                        <span>Commission</span>
+                                    </div>
+                                    <div class="col-lg-8 col-md-12">
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" aria-label="Recipient 's username" aria-describedby="basic-addon2">
+                                           <div class="input-group-append">
+                                                <span class="input-group-text" id="basic-addon2">%</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>-->
+                                
+                                <div class="form-group row">
+                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">Account Number
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="phone-mask" placeholder="Enter Account Number">
+                                        </div>
+                                    </div>
+                                
+                                <div class="form-group row">
+                                        <label for="phone-mask" class="col-sm-3 text-right control-label col-form-label">IFSC Number
+                                        </label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="phone-mask" placeholder="Enter IFSC Number">
+                                        </div>
+                                    </div>
+                               
+                                 
+                                
+
+                            </div>
+                        </div>
+                        <div class="card">
+                            
+                            <div class="border-top">
+                                <div class="card-body">
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Reset</button>
+                                    <button type="submit" class="btn btn-danger">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                       
+
+                        <div class="card">
+                            <div class="card-body">
+                                 <h4 class="card-title">Address</h4>
+                                
+                                <div class="form-group m-t-20">
+                                    <label>Country</label>
+                                    <select name="state" id="countySel" size="1" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <option value="" selected="selected">Select Country</option>
+                                    </select>
+                                </div>
+                                <div class="form-group m-t-20">
+                                    <label>State</label>
+                                    <select name="countrya" id="stateSel" size="1" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <option value="" selected="selected">Please select Country first</option>
+                                    </select>
+                                </div>
+                                <div class="form-group row">
+                                    <label class="col-md-3 m-t-15">District</label>
+                                   <select name="district" id="districtSel" size="1" class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                       <option value="" selected="selected">Please select State first</option>
+                                    </select>
+                                </div>
+                                <div class="form-group m-t-20">
+                                    <label>Location</label>
+                                    <input type="text" class="form-control" id="location" placeholder="Enter Current Location">
+                                </div>
+                               
+                                <div class="form-group">
+                                    <label>Pin Code <small class="text-muted">999-999</small></label>
+                                    <input type="tel" class="form-control" id="phone-mask" placeholder="Enter 6 digit Pin Code" maxlength="6">
+                                </div>
+                                
+                                <div class="form-group m-t-20">
+                                    <label>Distance</label>
+                                    <input type="number" class="form-control" id="location" placeholder="in kms">
+                                </div>
+                            </div>
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+                <!-- editor -->
+               
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="../../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- slimscrollbar scrollbar JavaScript -->
+    <script src="../../assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../../assets/extra-libs/sparkline/sparkline.js"></script>
+    <!--Wave Effects -->
+    <script src="../../dist/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="../../dist/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="../../dist/js/custom.min.js"></script>
+    <!-- This Page JS -->
+    <script src="../../assets/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js"></script>
+    <script src="../../dist/js/pages/mask/mask.init.js"></script>
+    <script src="../../assets/libs/select2/dist/js/select2.full.min.js"></script>
+    <script src="../../assets/libs/select2/dist/js/select2.min.js"></script>
+    <script src="../../assets/libs/jquery-asColor/dist/jquery-asColor.min.js"></script>
+    <script src="../../assets/libs/jquery-asGradient/dist/jquery-asGradient.js"></script>
+    <script src="../../assets/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js"></script>
+    <script src="../../assets/libs/jquery-minicolors/jquery.minicolors.min.js"></script>
+    <script src="../../assets/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="../../assets/libs/quill/dist/quill.min.js"></script>
+    <script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+        /*colorpicker*/
+        $('.demo').each(function() {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+    </script>
+</body>
+
+</html>
