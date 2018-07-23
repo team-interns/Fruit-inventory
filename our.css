@@ -1,3 +1,22 @@
+.modalstyle{
+    width: 109%;
+}
+.headercolor{
+    background-color: dimgray;
+}
+.thead{
+    background-color: dimgray;
+    color: aliceblue;
+}
+
+.clearDueModal{
+    width: 122%;
+}
+
+.inputpadding{
+    padding: 20px;
+}
+
 .tableBackground{
     background-color:darkgrey;
     color: floralwhite;
@@ -25,4 +44,3 @@
 .tableBorder{
     border: 1px solid black;
 }
-
