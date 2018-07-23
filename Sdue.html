@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html dir="ltr" lang="en">
 
 <head>
@@ -9,17 +8,21 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png">
-    <title>Fruit Management</title>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/images/favicon.png"/>
+    <title>Supplier-Payable Details</title>
     <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="../../assets/extra-libs/multicheck/multicheck.css">
-    <link href="../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
-    <link href="../../dist/css/style.min.css" rel="stylesheet">
-    <style>
-table, th, td {
-    border: 1px solid black;
-}
-</style>
+    <link rel="stylesheet" type="text/css" href="../../assets/extra-libs/multicheck/multicheck.css"/>
+    <link href="../../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet"/>
+    <link href="../../dist/css/style.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="../../dist/css/modalpop.css" rel="stylesheet">
+    <link href="../../dist/css/our.css" rel="stylesheet">
+    
+    
+    <!--Link for icons-->
+    
+        <!-- jQuery library -->
+     
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,7 +30,7 @@ table, th, td {
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-
+    
 <body>
     <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
@@ -45,7 +48,7 @@ table, th, td {
         <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
         <!-- ============================================================== -->
-         <header class="topbar" data-navbarbg="skin5">
+       <header class="topbar" data-navbarbg="skin5">
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     <!-- This is for the sidebar toggle which is visible on mobile only -->
@@ -55,15 +58,7 @@ table, th, td {
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="index.html">
                         <!-- Logo icon -->
-                        <b class="logo-icon p-l-5">
-                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="../../assets/images/fruit-logo.png" alt="homepage" class="light-logo"  height=70 width=230/>
-                           
-                        </b>
-                        <!--End Logo icon -->
-                         <!-- Logo text -->
-                        
+                        <img src="../../assets/images/fruit-logo.png" alt="homepage" class="light-logo"  height=65 width=240/>
                         <!-- Logo icon -->
                         <!-- <b class="logo-icon"> -->
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -95,16 +90,18 @@ table, th, td {
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                             <span class="d-none d-md-block">Create New <i class="fa fa-angle-down"></i></span>
+                             <span class="d-none d-md-block">Master <i class="fa fa-angle-down"></i></span>
                              <span class="d-block d-md-none"><i class="fa fa-plus"></i></span>   
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 
-                                <a class="dropdown-item" href="CreateUser.html">User</a>
+                                <a class="dropdown-item" href="CreateUser.html">Add User</a>
                                 
-                                <a class="dropdown-item" href="CustomerForm.html">Customer</a>
+                                <a class="dropdown-item" href="CustomerForm.html">Add Customer</a>
                                 
-                                <a class="dropdown-item" href="SupplierForm2.html">Supplier</a>
+                                <a class="dropdown-item" href="SupplierForm.html">Add Supplier</a>
+                                <a class="dropdown-item" href="Cash.html">Add Cash</a>
+                                <a class="dropdown-item" href="AddAdvance.html">Add Advance</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->
@@ -119,8 +116,8 @@ table, th, td {
                         <!-- ============================================================== -->
                         <!-- Comment -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown" style="padding: 10px">
-                            <a href="newPurchase.html"><div>
+                        <li class="nav-item dropdown pd">
+                            <a href="PurchaseForm.html"><div>
                                                 <div class="bg-dark p-10 text-white text-center">
                                                    <i class="fa fa-cart-plus m-b-5 font-16"></i>
                                                 </div>
@@ -133,8 +130,8 @@ table, th, td {
                         <!-- ============================================================== -->
                         <!-- Messages -->
                         <!-- ============================================================== -->
-                        <li class="nav-item dropdown" style="padding: 10px">
-                            <a href="AddSale.html">
+                        <li class="nav-item dropdown pd">
+                            <a href="SaleForm.html">
                              <div>
                                                 <div class="bg-dark p-10 text-white text-center">
                                                    <i class="fa fa-tag m-b-5 font-16"></i>
@@ -154,7 +151,7 @@ table, th, td {
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31"></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="Profile.html"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                <a class="dropdown-item" href="Balance.html"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
+                                
                                 
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="Rate.html"><i class="ti-settings m-r-5 m-l-5"></i> Rate Setting</a>
@@ -187,90 +184,58 @@ table, th, td {
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
                                 <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
                         
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Purchase </span></a>
+                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Product.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">Products</span></a></li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Supplier </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="newPurchase.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="purchasedetails.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Purchase details </span></a></li>
-                            </ul>
-                        </li>
-             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Supplier </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                               <li class="sidebar-item"><a href="Supplierform2.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="SupplierDetails.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing supplier details </span></a></li>  
+                               <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="SupplierTable.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing supplier details </span></a></li>  
                                 
                             </ul>
                         </li>
+                        
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Customer </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                               <li class="sidebar-item"><a href="Customerform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="CustomerTable.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing customer details </span></a></li>  
+                                
+                            </ul>
+                        </li>   
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Purchase </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                                <li class="sidebar-item"><a href="PurchaseForm.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="PurchaseTable.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Purchase details </span></a></li>
+                            </ul>
+                        </li>
+             
                 
           <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sale </span></a>
                             <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="ProductSalesForm.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Product Sale </span></a></li>
-                                <li class="sidebar-item"><a href="SalesTables.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Sale details </span></a></li>
+                                <li class="sidebar-item"><a href="SaleForm.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
+                                <li class="sidebar-item"><a href="SaleTable.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Sale details </span></a></li>
                             </ul>
                         </li>
-             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Customer </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                               <li class="sidebar-item"><a href="CustomerForm.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="CustomerTables.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing customer details </span></a></li>  
-                                
-                            </ul>
-                        </li>              
                         
-        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stocks.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Stock details</span></a></li>                
-      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Transaction.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Transactions</span></a></li>                
-       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="login.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">log out</span></a></li>                  
+                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Other transactions </span></a>
+                            <ul aria-expanded="false" class="collapse  first-level">
+                             <li class="sidebar-item"><a href="Stock.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Stock </span></a></li> 
+                                <li class="sidebar-item"><a href="Advance.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Advance</span></a></li> 
+                                <li class="sidebar-item"><a href="Cdue.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Customer payable </span></a></li> 
+                                <li class="sidebar-item"><a href="Cbal.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Customer receivable </span></a></li> 
+                                <li class="sidebar-item"><a href="Sdue.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Supplier payable </span></a></li> 
+                                <li class="sidebar-item"><a href="Sbal.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Supplier receivable </span></a></li>   
+                            </ul>
+                        </li>
+                                
+                  
+                  
+                      
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
             </div>
             <!-- End Sidebar scroll-->
-        </aside>   <!-- Sidebar scroll-->
-            <div class="scroll-sidebar">
-                <!-- Sidebar navigation-->
-                <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="p-t-30">
-                        <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="index.html" aria-expanded="false">
-                                <i class="mdi mdi-view-dashboard"></i><span class="hide-menu">Dashboard</span></a></li>
-                        
-                        <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Purchase </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Purchase details </span></a></li>
-                            </ul>
-                        </li>
-             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Supplier </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                               <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing supplier details </span></a></li>  
-                                
-                            </ul>
-                        </li>
-                
-          <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-receipt"></i><span class="hide-menu">Sale </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                                <li class="sidebar-item"><a href="Customerform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Customer.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Sale details </span></a></li>
-                            </ul>
-                        </li>
-             <li class="sidebar-item"> <a class="sidebar-link has-arrow waves-effect waves-dark" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-face"></i><span class="hide-menu">Customer </span></a>
-                            <ul aria-expanded="false" class="collapse  first-level">
-                               <li class="sidebar-item"><a href="Supplierform.html" class="sidebar-link"><i class="mdi mdi-note-plus"></i><span class="hide-menu">Add new </span></a></li>
-                                <li class="sidebar-item"><a href="Supplier.html" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu">  Existing customer details </span></a></li>  
-                                
-                            </ul>
-                        </li>              
-                        
-        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="stocks.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span class="hide-menu">Stock details</span></a></li>                
-      <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="Transaction.html" aria-expanded="false"><i class="mdi mdi-blur-linear"></i><span class="hide-menu">Transactions</span></a></li>                
-       <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="login.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span class="hide-menu">log out</span></a></li>                  
-                    </ul>
-                </nav>
-                <!-- End Sidebar navigation -->
-            </div>
-            <!-- End Sidebar scroll-->
-        </aside>
-       
-        <!-- ============================================================== -->
+        </aside>  <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
@@ -280,78 +245,191 @@ table, th, td {
             <!-- ============================================================== -->
             <!-- Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
-            <div class="page-breadcrumb">
+            <!--div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title"><b>BALANCE</b></h4>
+                        <h4 class="page-title">Purchase Details</h4>
                         <div class="ml-auto text-right">
                             <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    
-                                </ol>
+                               
                             </nav>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div-->
             <!-- ============================================================== -->
             <!-- End Bread crumb and right sidebar toggle -->
             <!-- ============================================================== -->
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
+            <br/>
             <div class="container-fluid">
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <div class="row">
-                    <div class="col-md-6">
-                         <div class="card">
+
+                
+                        <div class="card">
                             <div class="card-body">
-                                
-                                <div class="table-responsive"><br>
-                                    <h5 align="left">balance</h5>
-                                 
-                                    <table class="table">
-                                  <thead>
-                                    <tr>
-                                      <th scope="col">sl.no</th>
-                                      <th scope="col">Supplier-name</th>
-                                      <th scope="col">due</th>
-                                      
-                                    </tr>
-                                  </thead>
-                                  <tbody>
-                                    <tr>
-                                      <th scope="row">1</th>
-                                      <td>Mark</td>
-                                      <td>150000</td>
-                                     
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">2</th>
-                                      <td>Jacob</td>
-                                      <td>20000</td>
-                                      
-                                    </tr>
-                                    <tr>
-                                      <th scope="row">3</th>
-                                      <td>Larry</td>
-                                      <td>25000</td>
-                                      
-                                    </tr>
-                                  </tbody>
-                            </table>
+                               
+                                <div class="table-responsive">
+                                    <table id="zero_config" class="table table-striped table-bordered">
+                                        <thead style="background-color:darkgrey; color:floralwhite">
+                                            <tr>
+                                                <th>Supplier Name</th>
+                                                <th>Date</th>
+                                                <th>Due Amount(₹)</th>
+                                                <th>Due Details</th>
+                                                <th>Pay Due(₹)</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Raj</td>
+                                                <td>2011/04/25</td>
+                                                <td>$320,800</td>
+                                                 <td><button type="button" class="btn btn-info "data-toggle="modal" data-target="#myModal3"><i class="fa fa-eye"></i></button>
+                                                     <div id="myModal3" class="modal fade" role="contentinfo">
+                                                      <div class="modal-dialog">
+                                                          <div class="modal-content modalstyle">
+                                                              <div class="modal-header">
+                                                              <h4>Due Details</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                              </div>
+                                                              <div class="modal-body container">
+                                                              <table class="table table-striped table-bordered">
+                                                                     <thead class="thead" >
+                                                                         <th>Sl.no</th>
+                                                                      <th>Date</th>
+                                                                      <th>Due Amount(₹)</th>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                          <tr><td>1</td>
+                                                                              <td><input type="date" /></td>
+                                                                              <td> <input type="number" name="settled"/></td>
+                                                                          </tr>
+                                                                           <tr>
+                                                                               <td>2</td>
+                                                                              <td><input type="date" /></td>
+                                                                              <td> <input type="number"/></td>
+                                                                          </tr>
+                                                                          <tr>
+                                                                              <td>3.</td>
+                                                                              <td><input type="date" /></td>
+                                                                              <td> <input type="number"/></td>
+                                                                          </tr>
+                                                                          
+                                                                      </tbody>
+                                                                  </table></div>
+                                                              <div class="modal-footer"></div>
+                                                          </div>
+                                                         </div>
+                                                     </div>
+                                               </td>
+                                                <!--Clear button-->
+                                                <td><button type="button" class="btn btn-outline-info"data-toggle="modal" data-target="#myModal2">Clear</button><div id="myModal2" class="modal fade" role="dialog">
+                                                      <div class="modal-dialog">
+                                                          <div class="modal-content clearDueModal">
+                                                          <div class="modal-header">
+                                                              <h4>Due Details</h4>
+                                                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                              </div>
+                                                              
+                                                          <div class="modal-body container">
+                                                              Supplier Name
+                                                              <input type="text" name="supplierName" />
+                                                              Due Amount
+                                                              <input type="text" name="due" /><br/>
+                                                              <br/>
+                                                              Date<i class="fa fa-calendar-check-o">:</i><input type="date"/>
+                                                              <br/>
+                                                              <br/>
+                                                              <div class=" form-control">
+                                                                  <table class="table table-striped table-bordered ">
+                                                                      <thead>
+                                                                          <th>Sl.no</th>
+                                                                          <th>Date</th>
+                                                                          <th>Amount</th>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                          <tr>
+                                                                              <td><input type="checkbox" /></td>
+                                                                              <td>11/05/18</td>
+                                                                              <td>₹<input type="number" /></td>
+                                                                      </tr>
+                                                                      </tbody>
+                                                                  </table>
+                                                              </div>
+                                                              <div class="float-right">
+                                                                  <br/>
+                                                                <button type="button" class="btn btn-primary">Pay Amount</button>
+                                                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+                                                              </div>
+                                                         </div>
+                                                              <div class="modal-footer"></div>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                               </td>
+                                                <!--Edit-->
+                                                <td><button type="button" class="btn btn-info editButton" data-toggle="modal" data-target="#myModal1"><i class="fa fa-pencil-square"></i></button>
+                                                 <div id="myModal1" class="modal fade" role="dialog">
+                                                      <div class="modal-dialog">
+                                                          <div class="modal-content">
+                                                              <div class="modal-header">
+                                                              
+                                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            
+                                                              </div>
+                                                              <div class="modal-body">
+                                                                  <p>Do you want to delete?</p>
+                                                              </div>
+                                                              <div class="modal-footer">
+                                                                  
+                                                              </div>
+                                                        </div>
+
+                                                      </div>
+                                                    </div>
+                                                </td>  
+                                                <!--Delete-->
+                                                <td><button type="button" class="btn btn-info editButton" data-toggle="modal" data-target="#myModal"><i class="fa fa-trash"></i></button>
+                                                <div id="myModal" class="modal fade" role="dialog">
+                                                      <div class="modal-dialog">
+                                                          <div class="modal-content">
+                                                          <div class="modal-header">
+                                                              
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            
+                                                          </div>
+                                                          <div class="modal-body">
+                                                            <p>Do you want to delete?</p>
+                                                          </div>
+                                                          <div class="modal-footer">
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+                                                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+                                                          </div>
+                                                        </div>
+
+                                                      </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                          
+                                          
+                                        </tbody>
                                     
-
-
+                                    </table>
                                 </div>
 
                             </div>
                         </div>
-                    </div>
-                </div>
+                 
+
+
                 <!-- ============================================================== -->
                 <!-- End PAge Content -->
                 <!-- ============================================================== -->
@@ -369,17 +447,16 @@ table, th, td {
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center">
-                
-            </footer>
+            
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->
-        </div>
+            </div>
         <!-- ============================================================== -->
         <!-- End Page wrapper  -->
         <!-- ============================================================== -->
     </div>
+
     <!-- ============================================================== -->
     <!-- End Wrapper -->
     <!-- ============================================================== -->
