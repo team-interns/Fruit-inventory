@@ -281,7 +281,8 @@
                             <label><b>Transaction ID</b></label>
                             <input id="transactionid" name="transactionid"  type="text" /></div>
                             <div class="form-group col-md-4 offset-md-4 offest-md-4">
-                                <div class="col-sm-8 col-md-4 col-lg-3 f-icon"><i class="fas fa-calendar-alt"></i> <b>Date</b></div>
+                                <div class="col-sm-8 col-md-4 col-lg-3 f-icon">
+                                    <i class="fas fa-calendar-alt"></i> <b>Date</b></div>
                         <input type="date" class="form-inline" />
                             
                             </div>
@@ -292,17 +293,17 @@
                         <form id="example-form" action="#" class="m-t-40">
                             <div>
                                 <h3>Supplier</h3>
-                                <section>  
-                        <div class="row">
-                        <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
+                                <section>
+                                    <div class="row">
+                                    <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-body">
                                 
-                                <div class="form-group row">    
-                                <label for="supplierName">Supplier Name*</label>
+                                        <div class="form-group row">    
+                                            <label for="supplierName">Supplier Name*</label>
                                     <!input id="supplierName" name="sname" type="text" class="required form-control" /><div class="col-md-9">
                                         
-                                        <select class="select2 form-control custom-select" style="width: 100%; height:36px;">
+                                        <select class="select2 form-control custom-select" width= 100% height=36px;>
                                             <option>Select</option>
                                             <optgroup label="Alaskan/Hawaiian Time Zone">
                                                 <option value="AK">Alaska</option>
@@ -373,11 +374,11 @@
                                     <input id="supplierId" name="sid" type="text" class="required form-control">
                                 
                                     <label for="phone">Phone no</label>
-                                    <input id="password" name="snumber" type="number" class="required form-control">
+                                    <input type="tel" class="form-control phone-inputmask" id="phone-mask" placeholder="Enter Phone Number">
                             </div>
                         </div>
                     </div>
-                    <!--div class="col-md-4">
+                    <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
                                 <label for="location">Location</label>
@@ -392,8 +393,8 @@
                                     <input id="pin" name="pin" type="number" class="required form-control">
                             </div>
                         </div>
-                    </div-->
-                 <!--div class="col-md-4">
+                            </div>
+                 <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
                                 <label for="comission">Comission:</label>
@@ -405,7 +406,7 @@
                                     <input id="balance" name="balance" type="number" class="required form-control">
                             </div>
                         </div>
-                    </div-->
+                    </div>
                                     </div>
                                     <p>(*) Mandatory</p>
                                 </section>
@@ -426,15 +427,16 @@
                                                 <th>Product Name</th>
                                                 <th>Quantity</th>
                                                 <th>Unit</th>
-                                                <th>Rate</th>
-                                                <th>Amount</th>
+                                                <th>Rate(₹)</th>
+                                                <th>Amount(₹)</th>
                                                 </thead>
                                        <tbody>
                                                 <tr>
                                                     <td>1</td>
                                                     <td>-Auto genetated-</td>
-                                                    <td><select class="select2 form-control custom-select selectUnit">
-                                            <option>Select</option>
+                                                    <td>
+                                                        <select class="select2 form-control custom-select selectUnit">
+                                                    <option>Select</option>
                                             <option value="AP" >Apple</option>
                                               
 											<option value="HI">Apricot </option>
@@ -537,7 +539,7 @@
                                                 </th>
                                                 <th scope="col">Sl.No</th>
                                                 <th scope="col">Expenses</th>
-												<th scope="col">Amount</th>
+												<th scope="col">Amount(₹)</th>
                                             </tr>
                                         </thead>
                                         <tbody class="customtable">
@@ -604,7 +606,7 @@
                                                     </label>
                                                 </th>
                                                 <td>6</td>
-                                                <td>Cold storsge</td>
+                                                <td>Cold storage</td>
 												<td><input type="text"  /></td>
                                             </tr>
 											<tr>
