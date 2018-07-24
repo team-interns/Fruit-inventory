@@ -271,7 +271,7 @@
                             <form class="form-horizontal" action="/action_page.php">
                                 
                                 <div class="card-body">
-                                    <h4 class="card-title"><b>Add Product</b></h4>
+                                    <h4 class="card-title manditory"><b>Add Product</b></h4>
                                     <div class="form-group row">
                                         <label for="date" class="col-sm-8 text-right control-label col-form-label "><b>Date:</b></label>
                                         <div class="col-sm-3">
@@ -279,7 +279,8 @@
                                         </div>
                                     </div>
                                         <div class="form-group row">
-                                        <label  for="product"   class="col-sm-3 text-right control-label col-form-label"><b>Product Name</b></label>
+                                        <label  for="product"   class="col-sm-3 text-right control-label col-form-label"><b>Product Name <span class="mandatory"> *</span></b></label>
+                                            
                                         <div class="col-md-3">
                                         <input type="text" class="form-control"  id="product"  placeholder="Product name here" required>
                                         </div>
@@ -291,6 +292,20 @@
                                          <div class="col-md-3">
                                          <input type="text"  class="form-control" id="product ID"  placeholder="Auto Generated">
                                          </div></div>
+                                    <div class="form-group row " action="/action_page.php">
+                                    <label class="col-md-3 text-right control-label col-form-label"><b>Unit <span class="mandatory"> *</span></b></label>
+                                    <div class="col-sm-3">
+                                        <span class="select2-selection__rendered"></span>
+                                        <select class=" form-control custom-select" required>
+                                            <optgroup label="Select unit">
+                                                <option value= "KG">Kg</option>
+                                                <option value="Crates">Crates</option>
+                                                <option value="Piece">Peice</option>
+                                                <option value="Box">Box</option>
+                                            </optgroup>
+                                        </select>
+                                        </div></div>
+                                            
                                     
                                      <div class="border-top">
                                     <div class="card-body">
