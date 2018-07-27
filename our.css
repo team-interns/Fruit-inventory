@@ -5,6 +5,69 @@
     background-color: dimgray;
 }
 .thead{
+    background-color: darkgray;
+    color: aliceblue;
+}
+
+.clearDueModal{
+    width: 122%;
+}
+
+.inputpadding{
+    padding: 10px;
+}
+
+.inputmargin{
+    margin: 10px;
+}
+
+.tableBackground{
+    background-color:darkgrey;
+    color: floralwhite;
+}
+.iconPadding{
+    padding-top: 10px;
+    padding-right: 10px;
+}
+.modelTable{
+    background-color:darkgray; 
+    color: cornsilk;
+}
+
+.profilePic{
+    margin: 22px;
+}
+
+.projectButton{
+    border-radius: 50%;
+}
+.editButton{
+    border-radius: 50%; 
+    border: 5px;
+    font-size:20px;     
+}
+.selectUnit{
+     width: 100%; height:36px;
+}
+.tableBorder{
+    border: 1px solid black;
+}
+.span{
+    color: red;
+}
+
+.inputbox{
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.modalstyle{
+    width: 109%;
+}
+.headercolor{
+    background-color: dimgray;
+}
+.thead{
     background-color: dimgray;
     color: aliceblue;
 }
